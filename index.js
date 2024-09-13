@@ -9,7 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Tải cấu hình OpenAPI từ file YAML
-const swaggerDocument = yaml.load(fs.readFileSync(path.join(__dirname, 'api', 'openapi.yaml'), 'utf8'));
+const swaggerDocument = yaml.load(fs.readFileSync(path.join(__dirname, 'openapi.yaml'), 'utf8'));
 
 
 

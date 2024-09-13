@@ -3,6 +3,7 @@ const path = require('path');
 const swaggerUi = require('swagger-ui-express');
 const yaml = require('js-yaml');
 const fs = require('fs');
+const {sign} = require("jsonwebtoken");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -33,7 +34,7 @@ app.post('/services/oauth2/token', (req, res) => {
     }
 
     const payload = { grant_type, assertion };
-    const access_token = jwt.sign(payload, JWT_SECRET, { expiresIn: '1h' });
+    const access_token = sign(payload, JWT_SECRET, { expiresIn: '1h' });
 
     res.json({
         access_token,

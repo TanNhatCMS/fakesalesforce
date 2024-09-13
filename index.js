@@ -37,7 +37,7 @@ app.post('/services/oauth2/token', (req, res) => {
     });
 });
 // Cấu hình Swagger UI để phục vụ tài liệu OpenAPI
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.listen(PORT, () => {
     console.log(`Server đang chạy tại http://localhost:${PORT}`);
 });

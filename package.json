@@ -4,6 +4,7 @@
   "description": "Swagger Fake SalesForce - OpenAPI 3.0.",
   "main": "index.js",
   "scripts": {
+    "prestart": "pnpm install",
     "start": "node index.js"
   },
   "keywords": [

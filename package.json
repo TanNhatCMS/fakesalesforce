@@ -42,5 +42,8 @@
     "env": {
       "node": true
     }
+  },
+  "engines": {
+    "node": "20.x"
   }
 }

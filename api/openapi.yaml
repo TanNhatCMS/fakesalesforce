@@ -11,21 +11,22 @@ paths:
   /services/oauth2/token:
     post:
       summary: Lấy JWT access_token và instance_url test.salesforce.com
-      consumes:
-        - application/x-www-form-urlencoded
-      parameters:
-        - name: grant_type
-          in: formData
-          required: true
-          description: Kiểu grant OAuth2
-          schema:
-            type: string
-        - name: assertion
-          in: formData
-          required: true
-          description: JWT hoặc chứng thực để lấy token
-          schema:
-            type: string
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                grant_type:
+                  type: string
+                  description: Kiểu grant OAuth2
+                assertion:
+                  type: string
+                  description: JWT hoặc chứng thực để lấy token
+              required:
+                - grant_type
+                - assertion
       responses:
         200:
           description: Trả về JWT access_token và instance_url

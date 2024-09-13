@@ -1,24 +1,43 @@
-'use strict';
-
+const express = require('express');
 const path = require('path');
-const http = require('http');
+const swaggerUi = require('swagger-ui-express');
+const yaml = require('js-yaml');
+const fs = require('fs');
+const {sign} = require("jsonwebtoken");
 
-const oas3Tools = require('oas3-tools');
-const serverPort = 3000;
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-// swaggerRouter configuration
-const options = {
-    routing: {
-        controllers: path.join(__dirname, './controllers')
-    },
-};
+// Tải cấu hình OpenAPI từ file YAML
+const swaggerDocument = yaml.load(fs.readFileSync(path.join(__dirname, 'api', 'openapi.yaml'), 'utf8'));
 
-const expressAppConfig = oas3Tools.expressAppConfig(path.join(__dirname, 'api/openapi.yaml'), options);
-const app = expressAppConfig.getApp();
 
-// Initialize the Swagger middleware
-http.createServer(app).listen(serverPort, function () {
-    console.log('Your server is listening on port %d (http://localhost:%d)', serverPort, serverPort);
-    console.log('Swagger-ui is available on http://localhost:%d/docs', serverPort);
+
+// Ví dụ định nghĩa route POST /services/oauth2/token (bạn có thể giữ mã này từ phần trước)
+app.use(express.urlencoded({ extended: true }));
+
+// Secret key để ký JWT
+const JWT_SECRET = 'your_secret_key';
+
+app.post('/services/oauth2/token', (req, res) => {
+    const { grant_type, assertion } = req.body;
+
+    if (!grant_type || !assertion) {
+        return res.status(400).json({
+            error: 'Thiếu grant_type hoặc assertion',
+        });
+    }
+
+    const payload = { grant_type, assertion };
+    const access_token = sign(payload, JWT_SECRET, { expiresIn: '1h' });
+
+    res.json({
+        access_token,
+        instance_url: 'https://test.salesforce.com',
+    });
 });
-
+// Cấu hình Swagger UI để phục vụ tài liệu OpenAPI
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.listen(PORT, () => {
+    console.log(`Server đang chạy tại http://localhost:${PORT}`);
+});

@@ -1,6 +1,0 @@
-{"level":"error","message":"failed to start Express Server","service":"user-service","timestamp":"2024-09-13T08:50:21.707Z"}
-{"level":"info","message":"Express server running","service":"user-service","timestamp":"2024-09-13T08:50:21.731Z"}
-{"level":"error","message":"failed to start Express Server","service":"user-service","timestamp":"2024-09-13T08:51:24.281Z"}
-{"level":"info","message":"Express server running","service":"user-service","timestamp":"2024-09-13T08:51:24.305Z"}
-{"level":"error","message":"failed to start Express Server","service":"user-service","timestamp":"2024-09-13T08:53:06.131Z"}
-{"level":"info","message":"Express server running","service":"user-service","timestamp":"2024-09-13T08:53:06.153Z"}

@@ -21,8 +21,8 @@ importers:
         specifier: ^0.13.0
         version: 0.13.0
       js-yaml:
-        specifier: ^3.3.0
-        version: 3.14.1
+        specifier: ^4.0.0
+        version: 4.1.0
       jsonwebtoken:
         specifier: ^9.0.2
         version: 9.0.2

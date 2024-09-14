@@ -46,6 +46,7 @@ class ExpressServer {
       res.status(200);
       res.json(req.query);
     });
+    this.app.use('/', express.static(path.join(__dirname, 'public')));
   }
 
   launch() {

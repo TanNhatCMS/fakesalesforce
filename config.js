@@ -3,8 +3,8 @@ const path = require('path');
 const config = {
   ROOT_DIR: __dirname,
   URL_PORT: 3000,
-  URL_PATH: 'http://localhost;3000',
-  //URL_PATH: 'https://api-test-salesforce.vercel.app',
+  //URL_PATH: 'https://localhost;3000',
+  URL_PATH: 'https://api-test-salesforce.vercel.app',
   BASE_VERSION: '1.0.0',
   CONTROLLER_DIRECTORY: path.join(__dirname, 'controllers'),
   PROJECT_DIR: __dirname,

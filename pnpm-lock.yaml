@@ -12,8 +12,8 @@ importers:
         specifier: ^1.20.3
         version: 1.20.3
       camelcase:
-        specifier: ^5.3.1
-        version: 5.3.1
+        specifier: ^8.0.0
+        version: 8.0.0
       cookie-parser:
         specifier: ^1.4.6
         version: 1.4.6
@@ -396,6 +396,10 @@ packages:
   camelcase@5.3.1:
     resolution: {integrity: sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==}
     engines: {node: '>=6'}
+
+  camelcase@8.0.0:
+    resolution: {integrity: sha512-8WB3Jcas3swSvjIeA2yvCJ+Miyz5l1ZmB6HFb9R1317dt9LCQoswg/BGrmAmkWVEszSrrg4RwmO46qIm2OEnSA==}
+    engines: {node: '>=16'}
 
   chai-as-promised@7.1.2:
     resolution: {integrity: sha512-aBDHZxRzYnUYuIAIPBH2s511DjlKPzXNlXSGFC8CwmroWQLfrW0LtE1nK3MAwwNhJPa9raEjNCmRoFpG0Hurdw==}
@@ -2825,6 +2829,8 @@ snapshots:
   callsites@3.1.0: {}
 
   camelcase@5.3.1: {}
+
+  camelcase@8.0.0: {}
 
   chai-as-promised@7.1.2(chai@4.5.0):
     dependencies:

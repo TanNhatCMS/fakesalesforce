@@ -2,10 +2,10 @@
   "name": "swagger-fake-salesforce-openapi-3-0",
   "version": "1.0.0",
   "description": "Swagger Fake SalesForce - OpenAPI 3.0.",
-  "main": "src/index.js",
+  "main": "index.js",
   "private": true,
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node index.js",
     "dev": "nodemon"
   },
   "keywords": [

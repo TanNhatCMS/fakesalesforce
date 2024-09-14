@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('../api/swagger.json');
+const swaggerDocument = require('./api/swagger.json');
 const DefaultController = require('./controllers/DefaultController');
 
 const app = express();
